@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:weightSum="1">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Calculator"
+        android:id="@+id/back_button"
+        android:onClick="back_button_pressed"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Converter"
+        android:id="@+id/to_converter_button"
+        android:onClick="toConverterButtonClicked"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Values After Preforming Operation?"
+        android:id="@+id/delete_checkBox"
+        android:onClick="delete_checkBox_clicked"
+        android:checked="true"/>
+
+</LinearLayout>
