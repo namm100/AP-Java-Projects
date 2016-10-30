@@ -51,8 +51,12 @@ public class PaintedView extends View {
 
     }
     Complex f(Complex z) {
+
+        /**
+         * EDIT THE FUNCTION HERE
+         */
         try {
-            return z.conjugate();
+            return cos(z).multiply(sin(z));
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Function not defined at: " + z);
@@ -60,6 +64,20 @@ public class PaintedView extends View {
         }
     }
 
+    Complex sin(Complex z) {
+        Complex numer1 = exp(Complex.I().multiply(z));
+        Complex numer2 = exp(Complex.minusI().multiply(z));
+        Complex numer = numer1.subtract(numer2);
+        Complex denom = new Complex(0,2);
+        return numer.divide(denom);
+    }
+
+    Complex cos(Complex z) {
+        Complex numer1 = exp(Complex.minusI().multiply(z));
+        Complex numer2 = exp(Complex.I().multiply(z));
+        return numer1.add(numer2).multiply(0.5f);
+
+    }
     Complex exp(Complex z) {
         Complex unit = new Complex(Math.cos(z.real),Math.sin(z.imaginary));
         return unit.multiply((float)Math.exp(z.real));

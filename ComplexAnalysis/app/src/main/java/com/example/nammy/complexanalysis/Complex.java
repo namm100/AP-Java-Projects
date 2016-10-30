@@ -14,6 +14,9 @@ public class Complex {
     public Complex add(Complex a) {
         return new Complex(this.real + a.real, this.imaginary + a.imaginary);
     }
+    public Complex subtract(Complex a) {
+        return new Complex(this.real - a.real, this.imaginary - a.imaginary);
+    }
     public Complex multiply(Complex a) {
         return new Complex(this.real*a.real - this.imaginary*a.imaginary,this.real*a.imaginary+this.imaginary*a.real);
     }
@@ -62,6 +65,12 @@ public class Complex {
         return (float) Math.sqrt(z.real*z.real + z.imaginary * z.imaginary);
     }
 
+    public static Complex I() {
+        return new Complex(0,1);
+    }
+    public static Complex minusI() {
+        return new Complex(0,-1);
+    }
     @Override
     public boolean equals(Object obj) {
         if (((Complex) obj).real == this.real && ((Complex) obj).imaginary == this.imaginary)
